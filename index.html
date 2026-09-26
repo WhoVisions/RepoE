@@ -3,17 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RepoE</title>
+    <title>RepoE • Developer Scratchpad & Signal Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Welcome to RepoE</h1>
+        <header class="app-header">
+            <div class="brand">
+                <span class="logo-badge">⚡</span>
+                <div>
+                    <h1>Repo<span class="highlight">E</span> Hub</h1>
+                    <p class="tagline">High-Velocity Prompt & Code Scratchpad</p>
+                </div>
+            </div>
+            <div class="header-tools">
+                <span id="saveStatus" class="status-indicator">Auto-Saved</span>
+                <button id="clearBtn" class="btn btn-ghost btn-sm">Clear</button>
+                <button id="copyBtn" class="btn btn-secondary btn-sm">📋 Copy</button>
+                <button id="exportBtn" class="btn btn-primary btn-sm">📥 Export</button>
+            </div>
         </header>
-        <main>
-            <p>Your application is ready!</p>
+
+        <main class="workbench">
+            <div class="editor-pane">
+                <div class="pane-header">
+                    <span>📝 Scratch Workspace</span>
+                    <span id="charCount" class="text-muted">0 chars • 0 words</span>
+                </div>
+                <textarea id="scratchArea" placeholder="Draft prompt architectures, code snippets, or system configs here... (Auto-saves locally)"></textarea>
+            </div>
+
+            <div class="sidebar-pane">
+                <div class="pane-header">
+                    <span>⚡ Quick Templates</span>
+                </div>
+                <div class="templates-list">
+                    <button class="template-card" data-template="prompt">
+                        <strong>🤖 System Prompt Spec</strong>
+                        <p>Standard role, doctrine invariants, and response contract.</p>
+                    </button>
+                    <button class="template-card" data-template="pr">
+                        <strong>📦 Pull Request Memo</strong>
+                        <p>Executive summary, breaking changes, and test verification.</p>
+                    </button>
+                    <button class="template-card" data-template="task">
+                        <strong>🎯 5-Phase Mission Plan</strong>
+                        <p>Inspect, Plan, Patch, Verify, and Report.</p>
+                    </button>
+                </div>
+            </div>
         </main>
+
+        <footer class="app-footer">
+            <p>RepoE Hub • Verified & Synced • <span class="text-muted">Local Persistence Active</span></p>
+        </footer>
     </div>
     <script src="index.js"></script>
 </body>
